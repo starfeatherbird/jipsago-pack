@@ -101,18 +101,16 @@
     {
       "sido": "11",
       "all": true,
-      "verifiedAt": "2026-10-29",
+      "verifiedAt": "2026-10-30",
       "sourceGrade": "official",
-      "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=148950959",
-      "unverified": [
-        "all"
-      ]
+      "sourceUrl": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092167"
     },
     {
       "sido": "41",
       "sigungu": [
         "과천시",
         "광명시",
+        "구리시",
         "수원시 영통구",
         "수원시 장안구",
         "수원시 팔달구",
@@ -121,15 +119,14 @@
         "성남시 중원구",
         "안양시 동안구",
         "용인시 수지구",
+        "용인시 기흥구",
+        "화성시 동탄구",
         "의왕시",
         "하남시"
       ],
-      "verifiedAt": "2026-10-29",
+      "verifiedAt": "2026-10-30",
       "sourceGrade": "official",
-      "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=148950959",
-      "unverified": [
-        "sigungu"
-      ]
+      "sourceUrl": "https://www.molit.go.kr/USR/NEWS/m_71/dtl.jsp?id=95092167"
     }
   ],
   "supports": [

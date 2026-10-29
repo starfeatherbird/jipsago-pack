@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "packVersion": "2026.10.29-3",
-  "baseDate": "2026-10-29",
+  "packVersion": "2026.10.30-1",
+  "baseDate": "2026-10-30",
   "minApp": 1,
   "files": {
     "roadmap": {
@@ -14,15 +14,15 @@
     },
     "loans": {
       "path": "loans.json",
-      "sha256": "0f962858f6e33aa1479e79a5a8f77e486bd891f7c164dcb9e6ce4814774ced0f"
+      "sha256": "8ca000f6d9236a8417940a815eab78e614dadf94fe68308e819a042597655e69"
     },
     "regions": {
       "path": "regions.json",
-      "sha256": "4b181a383cb49b0e8d8a1bd11a6aa18b52a8805d03aec55fceb1acad932c0270"
+      "sha256": "32ad59688dfaab5bf8d8b766c802e64e78c2a933276dfbb1d68ccd0f404c9c46"
     },
     "calc": {
       "path": "calc.json",
-      "sha256": "625b681c9c94cce425dd73c901c381ec07c449847b577448513c3dc492672e9a"
+      "sha256": "11aa549e49c1b393276a0c433756b4b80174608fcb332303ad96c6b061f34579"
     },
     "glossary": {
       "path": "glossary.json",

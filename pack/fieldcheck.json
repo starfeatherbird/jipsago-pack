@@ -1,0 +1,1027 @@
+{
+  "groups": [
+    {
+      "id": "light",
+      "label": "빛·공기",
+      "order": 1
+    },
+    {
+      "id": "water",
+      "label": "물",
+      "order": 2
+    },
+    {
+      "id": "wall",
+      "label": "벽·천장·바닥",
+      "order": 3
+    },
+    {
+      "id": "noise",
+      "label": "소음",
+      "order": 4
+    },
+    {
+      "id": "facility",
+      "label": "구조·설비",
+      "order": 5
+    },
+    {
+      "id": "building",
+      "label": "건물·주변",
+      "order": 6
+    },
+    {
+      "id": "cost",
+      "label": "비용",
+      "order": 7
+    },
+    {
+      "id": "papers",
+      "label": "서류·사람",
+      "order": 8
+    },
+    {
+      "id": "ask",
+      "label": "질문 목록",
+      "order": 9
+    }
+  ],
+  "items": [
+    {
+      "id": "fc.light.direction",
+      "group": "light",
+      "label": "집 방향",
+      "why": "방향에 따라 햇빛이 드는 시간대와 냉난방 비용이 달라져요.",
+      "how": "나침반 앱으로 거실 창 방향을 확인하고 남향·동향 등을 적어 두세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.light.daylight",
+      "group": "light",
+      "label": "낮 채광",
+      "why": "낮에 해가 얼마나 드는지에 따라 생활 느낌이 크게 달라져요.",
+      "how": "불을 끈 상태에서 낮에 방 안이 얼마나 밝은지 보세요. 앞 건물이 가리는지도 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 3,
+      "critical": false
+    },
+    {
+      "id": "fc.light.crossVent",
+      "group": "light",
+      "label": "맞통풍",
+      "why": "마주 보는 창이 있으면 환기가 잘 되고 습기가 덜 차는 경우가 많아요.",
+      "how": "양쪽 창이나 현관·베란다를 열어 바람이 지나가는지 느껴 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.light.windowSize",
+      "group": "light",
+      "label": "창 크기",
+      "why": "창이 작으면 어둡고 환기가 어려울 수 있어요.",
+      "how": "창 개수와 크기를 보고, 열리는 폭도 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.light.doubleWindow",
+      "group": "light",
+      "label": "이중창·창틀 상태",
+      "why": "단열과 소음 차단에 영향을 줘요.",
+      "how": "창을 열고 닫아 보며 틈이 벌어지거나 뻑뻑하지 않은지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.light.airSmell",
+      "group": "light",
+      "label": "실내 냄새",
+      "why": "곰팡이나 하수 냄새는 환기·배관 문제의 주의 신호일 수 있어요.",
+      "how": "문을 닫고 잠시 있으면서 퀴퀴한 냄새나 하수 냄새가 나는지 맡아 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.water.pressure",
+      "group": "water",
+      "label": "수압",
+      "why": "수압이 약하면 샤워와 설거지가 불편해요.",
+      "how": "주방과 욕실 수도를 동시에 틀어 물줄기가 약해지지 않는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 3,
+      "critical": false
+    },
+    {
+      "id": "fc.water.drain",
+      "group": "water",
+      "label": "배수 속도",
+      "why": "배수가 느리면 막힘이나 배관 문제일 수 있어요.",
+      "how": "세면대와 욕실 바닥에 물을 받았다 흘려 내려가는 속도를 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.water.hotWaterTime",
+      "group": "water",
+      "label": "온수가 나오는 시간",
+      "why": "온수가 늦게 나오면 물과 가스가 낭비될 수 있어요.",
+      "how": "온수를 틀고 따뜻해지기까지 걸린 초를 재 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "number",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.water.boilerAge",
+      "group": "water",
+      "label": "보일러 연식",
+      "why": "오래된 보일러는 고장과 난방비 부담이 클 수 있어요.",
+      "how": "보일러에 붙은 제조 연도 스티커를 확인하고 연도를 적어 두세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "number",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.water.toilet",
+      "group": "water",
+      "label": "변기 물 내림·누수",
+      "why": "변기 문제는 입주 후 수리 책임 다툼이 되기 쉬워요.",
+      "how": "물을 내려 보고 물이 계속 새는 소리가 나는지 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.water.sinkLeak",
+      "group": "water",
+      "label": "싱크대·세면대 아래 누수",
+      "why": "배관 밑은 누수 흔적이 가장 먼저 보이는 곳이에요.",
+      "how": "하부장을 열어 물자국, 곰팡이, 눅눅함이 있는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.water.waterColor",
+      "group": "water",
+      "label": "물 색·냄새",
+      "why": "녹물이나 냄새는 배관 상태를 보여 주는 단서일 수 있어요.",
+      "how": "한참 틀어 놓고 물이 맑아지는지, 색이나 냄새가 있는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.wall.mold",
+      "group": "wall",
+      "label": "곰팡이·결로 흔적",
+      "why": "곰팡이는 건강과 인테리어 비용에 영향을 줘요.",
+      "how": "모서리, 창 주변, 옷장 뒤쪽 벽을 확인하고 검은 얼룩이 있는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 3,
+      "critical": false
+    },
+    {
+      "id": "fc.wall.leakMark",
+      "group": "wall",
+      "label": "누수 자국",
+      "why": "천장·벽의 물 얼룩은 위층이나 외벽 누수의 흔적일 수 있어요.",
+      "how": "천장 모서리와 벽 아래쪽에 갈색 얼룩이 있는지 보세요. 새로 도배한 곳은 이유를 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 3,
+      "critical": false
+    },
+    {
+      "id": "fc.wall.wallpaper",
+      "group": "wall",
+      "label": "벽지 들뜸",
+      "why": "벽지가 들뜨면 습기나 벽 안쪽 문제일 수 있어요.",
+      "how": "벽지를 손으로 눌러 보고 들뜨거나 울퉁불퉁한 곳이 있는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.wall.floorTilt",
+      "group": "wall",
+      "label": "바닥 기울기",
+      "why": "바닥이 기울면 가구 배치와 생활이 불편해요.",
+      "how": "구슬이나 휴대폰 수평계 앱을 바닥에 두어 기울기를 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.wall.floorCreak",
+      "group": "wall",
+      "label": "바닥 삐걱거림",
+      "why": "바닥이 울리면 층간소음도 커질 수 있어요.",
+      "how": "방과 거실을 걸어 다니며 삐걱 소리가 나는지 들어 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.wall.windowCondensation",
+      "group": "wall",
+      "label": "창가 결로",
+      "why": "창 주변 물방울과 곰팡이는 겨울철 단열이 약한 신호일 수 있어요.",
+      "how": "창틀과 창 아래 벽에 물자국이나 곰팡이가 있는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.noise.outside",
+      "group": "noise",
+      "label": "창 닫고 바깥 소음",
+      "why": "창을 닫아도 소음이 들리면 생활이 힘들 수 있어요.",
+      "how": "창을 닫고 1분쯤 가만히 있으며 바깥 소리가 얼마나 들리는지 느껴 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.noise.upstairs",
+      "group": "noise",
+      "label": "윗집 소음",
+      "why": "층간소음은 입주 후에 알기 쉬워요.",
+      "how": "천장 쪽 소리에 귀 기울이고, 중개사나 이웃에게 윗집 생활 소음을 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.noise.neighbor",
+      "group": "noise",
+      "label": "옆집 소음",
+      "why": "벽이 얇으면 옆집 소리가 그대로 전달될 수 있어요.",
+      "how": "벽에 귀를 대 보거나 옆집 소리가 나는지 조용히 들어 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.noise.roadRail",
+      "group": "noise",
+      "label": "도로·철로·상가 소음",
+      "why": "큰길이나 철로, 상가가 가까우면 소음과 진동이 있을 수 있어요.",
+      "how": "집 앞 도로, 철로, 유흥·음식점 거리와의 거리를 걸어 보며 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.noise.nightNoise",
+      "group": "noise",
+      "label": "저녁·밤 소음",
+      "why": "낮에는 조용해도 밤에 달라지는 동네가 있어요.",
+      "how": "가능하면 저녁이나 밤에 다시 방문해 소음 정도를 메모해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.outletCount",
+      "group": "facility",
+      "label": "콘센트 수",
+      "why": "콘센트가 적으면 멀티탭이 늘어나 불편해요.",
+      "how": "방마다 콘센트 개수를 세어 적어 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "number",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.outletPos",
+      "group": "facility",
+      "label": "콘센트 위치",
+      "why": "가구 배치와 맞지 않으면 쓰기 불편해요.",
+      "how": "침대, 책상, TV 자리 근처에 콘센트가 있는지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.storage",
+      "group": "facility",
+      "label": "수납 공간",
+      "why": "수납이 부족하면 물건이 쌓여 좁아 보여요.",
+      "how": "붙박이장, 신발장, 다용도실 크기를 보고 내 짐이 들어갈지 가늠해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.acHole",
+      "group": "facility",
+      "label": "에어컨 설치 위치·구멍",
+      "why": "설치 자리가 없으면 비용이 더 들 수 있어요.",
+      "how": "에어컨 배관 구멍과 실외기 자리가 있는지 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.acOption",
+      "group": "facility",
+      "label": "에어컨 옵션 여부",
+      "why": "옵션이 있으면 편하지만 고장 시 책임이 문제가 될 수 있어요.",
+      "how": "에어컨이 옵션인지 확인하고 작동해 보세요. 고장 시 책임은 누구인지 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.washer",
+      "group": "facility",
+      "label": "세탁기 자리",
+      "why": "세탁기 자리가 없으면 배치가 어려워요.",
+      "how": "수도 꼭지와 배수구가 있는 자리를 찾고 내 세탁기 크기가 들어갈지 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.cooktop",
+      "group": "facility",
+      "label": "인덕션·가스레인지",
+      "why": "조리 방식에 따라 필요한 용기와 비용이 달라요.",
+      "how": "인덕션인지 가스인지 확인하고 작동해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.internet",
+      "group": "facility",
+      "label": "인터넷·통신 상태",
+      "why": "통신이 안 터지면 재택·영상 시청이 불편해요.",
+      "how": "집 안에서 휴대폰 신호와 인터넷 가능 여부를 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.facility.doorLock",
+      "group": "facility",
+      "label": "현관 도어락·잠금",
+      "why": "잠금장치는 방범과 직결돼요.",
+      "how": "도어락과 방문 잠금이 잘 작동하는지 보고, 비밀번호를 바꿀 수 있는지 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.building.elevator",
+      "group": "building",
+      "label": "엘리베이터",
+      "why": "없거나 자주 고장 나면 짐 옮기기가 힘들어요.",
+      "how": "엘리베이터 유무와 대기 시간, 점검 일정을 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.building.parking",
+      "group": "building",
+      "label": "주차 가능 여부",
+      "why": "주차가 어려우면 매일 스트레스가 될 수 있어요.",
+      "how": "세대당 주차 대수와 방문 주차, 밤 시간대 상황을 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.building.trash",
+      "group": "building",
+      "label": "분리수거·쓰레기 배출",
+      "why": "배출 장소와 규칙이 불편하면 생활이 힘들어요.",
+      "how": "분리수거장 위치와 청결 상태, 배출 요일을 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.building.hallway",
+      "group": "building",
+      "label": "복도·계단 상태",
+      "why": "공용 공간은 건물 관리 상태를 보여 줘요.",
+      "how": "복도 청결, 조명, 쌓인 짐, 냄새를 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.building.security",
+      "group": "building",
+      "label": "방범(현관·CCTV)",
+      "why": "방범이 약하면 불안할 수 있어요.",
+      "how": "공동현관 보안, CCTV 위치, 관리실 유무를 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.building.nightMood",
+      "group": "building",
+      "label": "야간 분위기",
+      "why": "낮과 밤의 동네 느낌이 많이 다를 수 있어요.",
+      "how": "가능하면 저녁에 동네를 걸으며 가로등, 사람 수, 분위기를 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "level",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.building.convenience",
+      "group": "building",
+      "label": "편의시설 거리(분)",
+      "why": "마트, 병원 등이 멀면 불편해요.",
+      "how": "걸어서 마트까지 걸리는 시간을 실제로 재 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "number",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.building.transit",
+      "group": "building",
+      "label": "대중교통 이동 시간(분)",
+      "why": "출퇴근 시간은 매일 쌓이는 비용이에요.",
+      "how": "역이나 정류장까지 걷는 시간과 출근 시간대 이동 시간을 재 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "number",
+      "weight": 3,
+      "critical": false
+    },
+    {
+      "id": "fc.building.buildingAge",
+      "group": "building",
+      "label": "건물 연식·외관",
+      "why": "건물 노후도는 수리비와 안전 걱정에 영향을 줄 수 있어요.",
+      "how": "외벽 균열, 방수 상태, 준공 연도를 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.cost.mgmtItems",
+      "group": "cost",
+      "label": "관리비 항목(공용·개별)",
+      "why": "관리비에 뭐가 포함되는지에 따라 실제 부담이 달라요.",
+      "how": "관리비 고지서나 항목표를 보여 달라고 하고, 포함 항목을 적어 두세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.cost.utilities",
+      "group": "cost",
+      "label": "평균 공과금",
+      "why": "겨울과 여름 비용이 크게 다를 수 있어요.",
+      "how": "최근 몇 달치 전기·가스·수도 비용을 전 세입자나 집주인에게 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.cost.heating",
+      "group": "cost",
+      "label": "난방 방식과 겨울 난방비",
+      "why": "도시가스, 지역난방, 전기에 따라 비용이 많이 달라요.",
+      "how": "난방 방식을 확인하고, 겨울 평균 난방비를 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.cost.optionList",
+      "group": "cost",
+      "label": "옵션 가전 목록",
+      "why": "어떤 옵션이 있는지 계약서에 적어 둬야 나중에 다툼이 줄어요.",
+      "how": "냉장고, 세탁기 등 옵션 목록을 사진과 함께 적어 두세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.cost.optionBlame",
+      "group": "cost",
+      "label": "옵션 고장 시 책임",
+      "why": "옵션이 고장 났을 때 누가 고치는지 정해 두지 않으면 다툼이 생겨요.",
+      "how": "옵션 고장 시 수리 책임과 비용 부담을 집주인에게 물어 계약서에 적어 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.cost.internetFee",
+      "group": "cost",
+      "label": "인터넷·TV 비용 포함 여부",
+      "why": "관리비에 포함되는지에 따라 총비용이 달라요.",
+      "how": "인터넷, TV가 관리비에 포함되는지, 개별 가입인지 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.owner",
+      "group": "papers",
+      "label": "등기부 소유자 = 계약 상대",
+      "why": "소유자가 아닌 사람과 계약하면 권리를 지키기 어려워질 수 있어요.",
+      "how": "최신 등기부 갑구의 소유자 이름과 계약 상대 신분증을 대조해 보세요. 대리인이면 위임장과 인감증명서를 확인하세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 3,
+      "critical": true
+    },
+    {
+      "id": "fc.papers.mortgage",
+      "group": "papers",
+      "label": "근저당·가압류",
+      "why": "선순위 권리가 크면 보증금이나 매매 대금의 안전성이 떨어질 수 있어요.",
+      "how": "등기부 을구의 근저당 금액과 갑구의 가압류·압류·경매 기록을 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 3,
+      "critical": true
+    },
+    {
+      "id": "fc.papers.ledger",
+      "group": "papers",
+      "label": "건축물대장(위반건축물·용도)",
+      "why": "위반건축물이면 대출·보증보험 가입에 영향을 줄 수 있어요.",
+      "how": "건축물대장에서 위반건축물 표시와 주거용 용도인지 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 3,
+      "critical": true
+    },
+    {
+      "id": "fc.papers.guarantee",
+      "group": "papers",
+      "label": "보증보험 가입 가능 여부",
+      "why": "가입이 안 되면 보증금 회수 위험을 혼자 지게 될 수 있어요.",
+      "how": "보증 기관에 집 주소로 가입 가능한지 계약 전에 문의해 보세요. 중개사 말만 믿지 마세요.",
+      "dealTypes": [
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 3,
+      "critical": true
+    },
+    {
+      "id": "fc.papers.landlordLive",
+      "group": "papers",
+      "label": "집주인 거주 여부",
+      "why": "집주인이 직접 사는지 여부는 연락과 신뢰에 영향을 줘요.",
+      "how": "집주인이 그 집이나 근처에 사는지 물어보세요. 직접 만날 수 있는지도 확인해 보세요.",
+      "dealTypes": [
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.brokerReg",
+      "group": "papers",
+      "label": "중개사 등록 확인",
+      "why": "등록되지 않은 사람이 중개하면 문제 시 책임을 묻기 어려울 수 있어요.",
+      "how": "중개사무소 등록증, 등록번호, 대표자 이름을 확인해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.seniorAmount",
+      "group": "papers",
+      "label": "선순위 금액 합계",
+      "why": "선순위가 크면 경매 시 내 보증금이 밀릴 수 있어요.",
+      "how": "등기부 근저당 합계, 세금 체납, 선순위 임차인 보증금을 더해 집 시세와 비교해 보세요.",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "kind": "text",
+      "weight": 3,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.taxArrears",
+      "group": "papers",
+      "label": "집주인 세금 체납",
+      "why": "세금 체납은 경매 시 먼저 가져가요.",
+      "how": "집주인 동의를 받아 국세·지방세 완납증명서를 요청해 보세요.",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.restoreScope",
+      "group": "papers",
+      "label": "원상복구 범위",
+      "why": "범위가 넓으면 퇴거 때 부담이 커질 수 있어요.",
+      "how": "못, 도배, 벽지 등 어디까지 복구해야 하는지 계약서 특약으로 정하고 사진을 남기세요.",
+      "dealTypes": [
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.sellerDebt",
+      "group": "papers",
+      "label": "매도인 사정·세입자 승계",
+      "why": "매매에서는 거주 중인 세입자나 매도 사유가 영향을 줘요.",
+      "how": "현재 세입자가 있는지, 계약 만료일과 승계 조건, 매도 사유를 물어보세요.",
+      "dealTypes": [
+        "buy"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.papers.proxy",
+      "group": "papers",
+      "label": "대리인 계약 여부",
+      "why": "대리인이 오면 위임 범위를 직접 확인해야 해요.",
+      "how": "대리인이면 위임장, 인감증명서를 받고 집주인과 직접 통화해 보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.prevTenant",
+      "group": "ask",
+      "label": "전 세입자가 나간 이유",
+      "why": "나간 이유에서 집의 문제를 알 수 있을 수 있어요.",
+      "how": "중개사나 집주인에게 직접 물어보세요.",
+      "dealTypes": [
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.sellReason",
+      "group": "ask",
+      "label": "집을 파는 이유",
+      "why": "매도 사유에서 가격이나 집 상태의 단서를 얻을 수 있어요.",
+      "how": "중개사나 매도인에게 물어보세요.",
+      "dealTypes": [
+        "buy"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.repairHistory",
+      "group": "ask",
+      "label": "수리·하자 이력",
+      "why": "반복 수리한 곳이 앞으로도 문제가 될 수 있어요.",
+      "how": "최근 수리한 곳, 누수·곰팡이 이력이 있는지 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.moveInDate",
+      "group": "ask",
+      "label": "입주 가능일",
+      "why": "입주일과 계약 일정이 안 맞으면 대출이나 이사에 영향을 줘요.",
+      "how": "원하는 입주일에 맞출 수 있는지 확인하고 계약서에 적어 두세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.guaranteeAsk",
+      "group": "ask",
+      "label": "보증보험·대출 협조 가능 여부",
+      "why": "집주인 협조가 없으면 대출이나 보험 진행이 늦어질 수 있어요.",
+      "how": "보증보험 가입, 질권 설정 같은 절차에 협조할 수 있는지 물어보세요.",
+      "dealTypes": [
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 2,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.plan",
+      "group": "ask",
+      "label": "재건축·매도·리모델링 계획",
+      "why": "건물 계획이 있으면 거주 기간에 영향을 줄 수 있어요.",
+      "how": "건물이 팔리거나 재건축 계획이 있는지 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    },
+    {
+      "id": "fc.ask.mgmtAsk",
+      "group": "ask",
+      "label": "관리비 인상·수리 정책",
+      "why": "관리 규칙을 미리 알면 나중에 다툼이 줄어요.",
+      "how": "관리비 인상 계획, 수리 요청 방식, 규칙이 있는지 물어보세요.",
+      "dealTypes": [
+        "buy",
+        "jeonse",
+        "wolse"
+      ],
+      "kind": "text",
+      "weight": 1,
+      "critical": false
+    }
+  ]
+}

@@ -1,5 +1,2801 @@
 {
-  "products": [],
-  "fragments": {},
-  "questions": []
+  "products": [
+    {
+      "id": "loan.didimdol",
+      "name": "내집마련 디딤돌대출",
+      "operator": "주택도시기금(심사 HUG, 취급 수탁은행)",
+      "dealTypes": [
+        "buy"
+      ],
+      "tags": [
+        "firstHome",
+        "newlywed"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0503/FP05030101.jsp",
+      "unverified": [
+        "rate"
+      ],
+      "summary": "무주택 세대주가 주택을 구입할 때 이용하는 주택도시기금 구입자금 대출입니다. 소득·주택가격·면적 기준에 따라 한도와 금리가 달라집니다.",
+      "targetText": "성년 세대주이면서 세대원 전원 무주택인 주택 매매계약 체결자(상속·증여 제외). 만 30세 미만 단독·미혼 세대주는 원칙적으로 제외(미성년 형제자매 부양 6개월 이상 등 예외). 만 30세 이상 미혼 단독세대주는 전용 60㎡·3억 이하 주택이 기준입니다.",
+      "incomeText": "부부합산 연소득 일반 6천만 원 이하 / 생애최초·2자녀 이상 7천만 원 이하 / 신혼 8.5천만 원 이하(초과해도 신청인 1인 6천만 원 이하면 가능하나 금리 0.3%p 가산). 순자산 5.11억 원 이하(2026년 기준).",
+      "limitText": "일반 2억 / 생애최초 2.4억 / 신혼·2자녀 이상 3.2억(미혼 단독 1.5억, 생애최초 2억). LTV 70%(생애최초 80%, 수도권·규제지역은 70%), DTI 60%. 주택 평가액 5억 이하(신혼·2자녀 이상 6억 이하), 전용 85㎡ 이하(읍·면 100㎡). 2025.6.27 이전 계약은 종전 한도(2.5/3/4억).",
+      "rate": {
+        "min": 2.85,
+        "max": 4.15
+      },
+      "termText": "10·15·20·30년. 비거치 또는 1년 거치. 원리금균등·원금균등·체증식.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.incomeAmount",
+        "doc.registry",
+        "doc.saleContract",
+        "doc.sealCert"
+      ],
+      "applyAt": "기금e든든 또는 수탁은행(우리·국민·신한·농협·하나·iM뱅크·부산). 소유권이전등기 전(등기 후 3개월 이내까지).",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0503/FP05030101.jsp",
+      "cautions": [
+        "대출 후 1개월 이내 전입, 2년 이상 실거주 의무가 있고 대출기간 중 1주택을 유지해야 합니다(위반 시 회수).",
+        "대출기간 중 추가 주택을 취득하고 6개월 안에 처분하지 않으면 회수될 수 있습니다.",
+        "수도권·규제지역은 생애최초여도 LTV 70%가 적용됩니다.",
+        "자산심사에서 부적격이면 가산금리가 붙을 수 있습니다.",
+        "신혼부부 전용 구입자금은 별도 상품이 아니라 디딤돌의 신혼가구 조건입니다.",
+        "금리표 셀 값은 공식 페이지가 이미지라 2차 자료 기준입니다. 은행·기금e든든에서 확인하세요."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "buy",
+            "label": "주택 구입(매매)"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 511000000,
+            "label": "순자산 5.11억 이하"
+          },
+          {
+            "ref": "areaStd"
+          },
+          {
+            "ref": "notUnder30Single"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 85000000,
+                    "label": "부부합산 소득 8.5천만 이하"
+                  },
+                  {
+                    "f": "housePrice",
+                    "op": "<=",
+                    "v": 600000000,
+                    "label": "주택 6억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "incomeSelf",
+                    "op": "<=",
+                    "v": 60000000,
+                    "label": "신청인 1인 소득 6천만 이하(금리 0.3%p 가산)"
+                  },
+                  {
+                    "f": "housePrice",
+                    "op": "<=",
+                    "v": 600000000,
+                    "label": "주택 6억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "childCount",
+                    "op": ">=",
+                    "v": 2,
+                    "label": "미성년 자녀 2명 이상"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 70000000,
+                    "label": "부부합산 소득 7천만 이하"
+                  },
+                  {
+                    "f": "housePrice",
+                    "op": "<=",
+                    "v": 600000000,
+                    "label": "주택 6억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "firstHome",
+                    "op": "==",
+                    "v": true,
+                    "label": "생애최초 주택 구입"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 70000000,
+                    "label": "부부합산 소득 7천만 이하"
+                  },
+                  {
+                    "f": "housePrice",
+                    "op": "<=",
+                    "v": 500000000,
+                    "label": "주택 5억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 60000000,
+                    "label": "부부합산 소득 6천만 이하"
+                  },
+                  {
+                    "f": "housePrice",
+                    "op": "<=",
+                    "v": 500000000,
+                    "label": "주택 5억 이하"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "not": {
+                  "all": [
+                    {
+                      "f": "age",
+                      "op": ">=",
+                      "v": 30
+                    },
+                    {
+                      "f": "singleHousehold",
+                      "op": "==",
+                      "v": true
+                    },
+                    {
+                      "f": "married",
+                      "op": "==",
+                      "v": "single"
+                    }
+                  ]
+                }
+              },
+              {
+                "all": [
+                  {
+                    "f": "area",
+                    "op": "<=",
+                    "v": 60,
+                    "label": "미혼 단독세대주(만 30세 이상)는 전용 60㎡ 이하"
+                  },
+                  {
+                    "f": "housePrice",
+                    "op": "<=",
+                    "v": 300000000,
+                    "label": "미혼 단독세대주(만 30세 이상)는 주택 3억 이하"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "housePrice",
+          "caps": [
+            {
+              "when": {
+                "ref": "newlywedOrTwoKids"
+              },
+              "v": 320000000
+            },
+            {
+              "when": {
+                "f": "firstHome",
+                "op": "==",
+                "v": true
+              },
+              "v": 240000000
+            },
+            {
+              "v": 200000000
+            }
+          ],
+          "ratios": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "firstHome",
+                    "op": "==",
+                    "v": true
+                  },
+                  {
+                    "ref": "nonMetro"
+                  }
+                ]
+              },
+              "v": 0.8
+            },
+            {
+              "v": 0.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.didimdol.newborn",
+      "name": "신생아 특례 디딤돌대출",
+      "operator": "주택도시기금(심사 HUG, 취급 수탁은행)",
+      "dealTypes": [
+        "buy"
+      ],
+      "tags": [
+        "newborn",
+        "firstHome"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://www.myhome.go.kr/hws/portal/cont/selectBabySpecialCaseStepStoneLoneView.do",
+      "unverified": [
+        "incomeText"
+      ],
+      "summary": "대출 접수일 기준 2년 이내 출산·입양 가구를 위한 구입자금 특례 대출입니다. 소득 기준이 넓고 금리가 낮은 고정금리입니다.",
+      "targetText": "대출 접수일 기준 2년 이내 출산·입양(2023.1.1 이후 출생, 혼인 여부 무관)한 무주택 세대주. 1주택자는 대환만 가능합니다.",
+      "incomeText": "부부합산 1.3억 원 이하, 맞벌이 2억 원 이하(각자 1.3억 이하). 순자산 5.11억 원 이하(2026년). 2025년 이후 출생아 가구의 소득 2.5억 완화는 공식 확인이 되지 않았습니다.",
+      "limitText": "최대 4억. LTV 70%(생애최초 80%, 수도권·규제지역 70%), DTI 60%. 주택 평가액 9억 이하, 전용 85㎡ 이하(읍·면 100㎡). 2025.6.27 이전 계약은 5억.",
+      "rate": {
+        "min": 1.8,
+        "max": 4.5
+      },
+      "termText": "10·15·20·30년. 특례금리 기간 기본 5년, 추가 출산 자녀당 5년 연장(최장 15년), 이후 소득별 별도 금리.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.familyRelation",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.incomeAmount",
+        "doc.registry",
+        "doc.saleContract",
+        "doc.sealCert"
+      ],
+      "applyAt": "기금e든든·수탁은행(우리·신한·국민·농협·하나). 등기 전 또는 등기 후 3개월 이내(대환은 제한 없음).",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://www.myhome.go.kr/hws/portal/cont/selectBabySpecialCaseStepStoneLoneView.do",
+      "cautions": [
+        "실거주·1주택 유지 의무는 디딤돌과 같습니다.",
+        "기금포털 상품 페이지는 직접 열람하지 못해 마이홈포털 안내를 기준으로 했습니다.",
+        "2025년 이후 출생아 가구 소득 기준 완화 여부는 공식 확인이 필요합니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "buy",
+            "label": "주택 구입(매매)"
+          },
+          {
+            "f": "newbornWithin2y",
+            "op": "==",
+            "v": true,
+            "label": "2년 이내 출산·입양(2023.1.1 이후 출생)"
+          },
+          {
+            "ref": "newbornIncome"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 511000000,
+            "label": "순자산 5.11억 이하"
+          },
+          {
+            "f": "housePrice",
+            "op": "<=",
+            "v": 900000000,
+            "label": "주택 9억 이하"
+          },
+          {
+            "ref": "areaStd"
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "housePrice",
+          "caps": [
+            {
+              "v": 400000000
+            }
+          ],
+          "ratios": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "firstHome",
+                    "op": "==",
+                    "v": true
+                  },
+                  {
+                    "ref": "nonMetro"
+                  }
+                ]
+              },
+              "v": 0.8
+            },
+            {
+              "v": 0.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.didimdol.dream",
+      "name": "청년 주택드림 디딤돌대출",
+      "operator": "주택도시기금",
+      "dealTypes": [
+        "buy"
+      ],
+      "tags": [
+        "youth",
+        "newlywed"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "secondary",
+      "sourceUrl": "https://kbthink.com/loan/find/dream-housing-loan.html",
+      "unverified": [
+        "targetText",
+        "incomeText",
+        "limitText",
+        "rate"
+      ],
+      "summary": "청년 주택드림 청약통장으로 청약에 당첨된 청년이 분양대금을 마련할 때 이용하는 대출입니다. 공식 상품 페이지를 확인하지 못해 2차 자료 기준입니다.",
+      "targetText": "청년 주택드림 청약통장(가입·전환 1년 이상, 1,000만 원 이상 납입)으로 청약에 당첨된 무주택 세대주. 당첨 시 만 39세 이하.",
+      "incomeText": "미혼 7천만 원 이하 / 신혼(혼인 7년 이내·3개월 내 예정) 부부합산 1억 원 이하. 순자산 5.11억 원 이하(2026년). 소득 기준은 공식 미확인입니다.",
+      "limitText": "미혼 3억 / 신혼 4억. LTV 70%(생애최초 보증 가입 시 80%, 수도권·규제지역 70%). 분양가 6억 이하, 전용 85㎡ 이하(읍·면 100㎡).",
+      "rate": {
+        "min": 2.4,
+        "max": 4.15
+      },
+      "termText": "10·15·20·30년(소득 4천만 원 이하는 40년 가능), 1년 거치 가능.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.saleContract"
+      ],
+      "applyAt": "기금e든든·은행 지점.",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://nhuf.molit.go.kr",
+      "cautions": [
+        "청약통장 당첨자 전용이라 일반 매매에는 해당하지 않습니다.",
+        "공식 기금포털 상품 페이지를 확인하지 못했습니다. 금리·한도·소득 기준은 반드시 공식 안내에서 다시 확인하세요.",
+        "금리표 값은 2026-04-14 기준 2차 자료입니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "buy",
+            "label": "주택 구입(분양)"
+          },
+          {
+            "f": "dreamAccountWinner",
+            "op": "==",
+            "v": true,
+            "label": "청년 주택드림 청약통장으로 청약 당첨"
+          },
+          {
+            "f": "age",
+            "op": "<=",
+            "v": 39,
+            "label": "당첨 시 만 39세 이하"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 100000000,
+                    "label": "부부합산 소득 1억 이하",
+                    "unverified": true
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": false,
+                    "label": "신혼이 아님(미혼 또는 혼인 7년 초과)"
+                  },
+                  {
+                    "f": "incomeSelf",
+                    "op": "<=",
+                    "v": 70000000,
+                    "label": "본인 소득 7천만 이하",
+                    "unverified": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 511000000,
+            "label": "순자산 5.11억 이하"
+          },
+          {
+            "f": "housePrice",
+            "op": "<=",
+            "v": 600000000,
+            "label": "분양가 6억 이하",
+            "unverified": true
+          },
+          {
+            "ref": "areaStd"
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "housePrice",
+          "caps": [
+            {
+              "when": {
+                "f": "newlywed",
+                "op": "==",
+                "v": true
+              },
+              "v": 400000000
+            },
+            {
+              "v": 300000000
+            }
+          ],
+          "ratios": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "firstHome",
+                    "op": "==",
+                    "v": true
+                  },
+                  {
+                    "ref": "nonMetro"
+                  }
+                ]
+              },
+              "v": 0.8
+            },
+            {
+              "v": 0.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.bogeumjari",
+      "name": "보금자리론",
+      "operator": "한국주택금융공사(HF)",
+      "dealTypes": [
+        "buy"
+      ],
+      "tags": [
+        "firstHome",
+        "newlywed",
+        "newborn"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://www.hf.go.kr/ko/sub01/sub01_01_01.do",
+      "summary": "소득·주택가격 요건이 디딤돌보다 넓은 대신 금리가 더 높은 장기 고정금리 주택담보대출입니다.",
+      "targetText": "성년 국민으로 무주택 또는 1주택(담보주택 제외 부부합산)이며 CB 점수가 271점 이상인 사람.",
+      "incomeText": "부부합산 7천만 원 이하 / 신혼(혼인 7년 이내) 8.5천만 원 / 자녀 1명 9천만 원 / 다자녀 1억 원 이하. 신혼은 초과해도 1인 7천만 원 이하면 가능합니다.",
+      "limitText": "3.6억 / 다자녀·전세사기피해자 4억 / 생애최초 4.2억. 주택가격 6억 이하(시세·감정·매매가 중 하나라도 초과하면 불가, 전세사기피해자 9억). LTV 아파트 70%·기타 65%(규제지역 등 10%p 차감, 생애최초·실수요자는 차감 없음), DTI 60%.",
+      "rate": {
+        "min": 4.9,
+        "max": 5.3
+      },
+      "termText": "10·15·20·30·40·50년(40년은 40세 미만 또는 50세 미만 신혼, 50년은 35세 미만 또는 40세 미만 신혼). 원리금균등·원금균등·체증식.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.incomeProof",
+        "doc.employment",
+        "doc.saleContract",
+        "doc.registry"
+      ],
+      "applyAt": "HF 홈페이지(u·아낌e) 또는 은행 창구(t). 소유권이전등기 후 3개월 이내(구입용도).",
+      "applyUrl": "https://www.hf.go.kr",
+      "officialUrl": "https://www.hf.go.kr/ko/sub01/sub01_01_01.do",
+      "cautions": [
+        "금리는 2026-10-01 공시 기준(u·t 5.00~5.30%, 아낌e는 0.1%p 낮음)이며 규제지역 담보는 0.2%p가 더해집니다.",
+        "3년 내 중도상환수수료(0.5% 한도)가 있을 수 있습니다.",
+        "추가 주택을 취득하면 6개월 안에 처분해야 합니다.",
+        "재외국민은 한도가 줄 수 있습니다. 서류 상세 목록은 공식 페이지에서 확인하세요."
+      ],
+      "rule": {
+        "all": [
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "buy",
+            "label": "주택 구입(매매)"
+          },
+          {
+            "f": "age",
+            "op": ">=",
+            "v": 19,
+            "label": "성년(만 19세 이상)"
+          },
+          {
+            "f": "ownedHomes",
+            "op": "<=",
+            "v": 1,
+            "label": "무주택 또는 1주택"
+          },
+          {
+            "f": "housePrice",
+            "op": "<=",
+            "v": 600000000,
+            "label": "주택 6억 이하"
+          },
+          {
+            "f": "creditScore",
+            "op": ">=",
+            "v": 271,
+            "label": "CB 점수 271점 이상"
+          },
+          {
+            "any": [
+              {
+                "f": "income",
+                "op": "<=",
+                "v": 70000000,
+                "label": "부부합산 소득 7천만 이하"
+              },
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 85000000,
+                    "label": "부부합산 소득 8.5천만 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "childCount",
+                    "op": ">=",
+                    "v": 1,
+                    "label": "자녀 1명 이상"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 90000000,
+                    "label": "부부합산 소득 9천만 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "childCount",
+                    "op": ">=",
+                    "v": 3,
+                    "label": "자녀 3명 이상"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 100000000,
+                    "label": "부부합산 소득 1억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "incomeMin",
+                    "op": "<=",
+                    "v": 70000000,
+                    "label": "부부 중 소득이 낮은 쪽 7천만 이하"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "housePrice",
+          "caps": [
+            {
+              "when": {
+                "f": "firstHome",
+                "op": "==",
+                "v": true
+              },
+              "v": 420000000
+            },
+            {
+              "when": {
+                "any": [
+                  {
+                    "f": "childCount",
+                    "op": ">=",
+                    "v": 3
+                  },
+                  {
+                    "f": "fraudVictim",
+                    "op": "==",
+                    "v": true
+                  }
+                ]
+              },
+              "v": 400000000
+            },
+            {
+              "v": 360000000
+            }
+          ],
+          "ratios": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "houseType",
+                    "op": "==",
+                    "v": "apt"
+                  },
+                  {
+                    "f": "regulatedArea",
+                    "op": "==",
+                    "v": true
+                  },
+                  {
+                    "f": "firstHome",
+                    "op": "==",
+                    "v": false
+                  }
+                ]
+              },
+              "v": 0.6
+            },
+            {
+              "when": {
+                "f": "houseType",
+                "op": "==",
+                "v": "apt"
+              },
+              "v": 0.7
+            },
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "regulatedArea",
+                    "op": "==",
+                    "v": true
+                  },
+                  {
+                    "f": "firstHome",
+                    "op": "==",
+                    "v": false
+                  }
+                ]
+              },
+              "v": 0.55
+            },
+            {
+              "v": 0.65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.buteomok",
+      "name": "버팀목전세자금대출",
+      "operator": "주택도시기금(심사 HUG, 취급 수탁은행)",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [
+        "lowIncome"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020101.jsp",
+      "unverified": [
+        "rate"
+      ],
+      "summary": "무주택 세대주의 전세보증금 마련을 돕는 주택도시기금 대출입니다. 소득·보증금·면적 기준이 있고 대출금은 임대인 계좌로 입금되는 것이 원칙입니다.",
+      "targetText": "성년 세대주이면서 세대원 전원 무주택. 임대차계약을 체결하고 보증금의 5% 이상을 지급한 사람.",
+      "incomeText": "부부합산 5천만 원 이하 / 2자녀·다자녀·혁신도시·재개발 이주 등 6천만 원 / 신혼 7.5천만 원. 순자산 3.45억 원 이하(2026년).",
+      "limitText": "일반 수도권 1.2억·그 외 8천만 원(신혼·2자녀 이상 2.5억·1.6억). 전세금의 70%(신혼·2자녀 이상 80%) 이내, 보증기관 한도 이내. 보증금 수도권 3억·그 외 2억 이하(신혼·2자녀 이상 4억·3억), 전용 85㎡ 이하(읍·면 100㎡).",
+      "rate": {
+        "min": 2.5,
+        "max": 3.5
+      },
+      "termText": "2년(최장 10년), 10년 후 미성년 자녀당 2년 연장해 최장 20년. 일시상환·혼합상환.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "기금e든든·수탁은행. 잔금일·전입일 중 빠른 날부터 3개월 이내(갱신은 갱신일부터 3개월).",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020101.jsp",
+      "cautions": [
+        "대출금은 임대인 계좌로 입금하는 것이 원칙입니다. 보증 신청도 같은 기한 안에 해야 합니다.",
+        "임대인의 협조(채권양도·질권 통지)가 필요합니다. 계약서에 전세대출 불가 특약이 있으면 보증이 거절될 수 있습니다.",
+        "HUG 보증을 이용하면 추가대출이 안 될 수 있고, 재직 1년 미만이면 한도가 2천만 원으로 제한될 수 있습니다.",
+        "금리는 공식 요약 범위(2.5~3.5%)와 2차 자료(2.1~2.9%)가 달라, 소득×보증금 표의 정확한 값은 공식 확인이 필요합니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "ref": "rentCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "jeonse",
+            "label": "전세 계약"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 345000000,
+            "label": "순자산 3.45억 이하"
+          },
+          {
+            "ref": "areaStd"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "ref": "newlywedOrTwoKids"
+                  },
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": true,
+                    "label": "수도권"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 400000000,
+                    "label": "보증금 수도권 4억 이하(신혼·2자녀 이상)"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "ref": "newlywedOrTwoKids"
+                  },
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": false,
+                    "label": "수도권 밖"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 300000000,
+                    "label": "보증금 3억 이하(신혼·2자녀 이상, 수도권 밖)"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": true,
+                    "label": "수도권"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 300000000,
+                    "label": "보증금 수도권 3억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": false,
+                    "label": "수도권 밖"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 200000000,
+                    "label": "보증금 2억 이하(수도권 밖)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 75000000,
+                    "label": "부부합산 소득 7.5천만 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "any": [
+                      {
+                        "f": "childCount",
+                        "op": ">=",
+                        "v": 2,
+                        "label": "미성년 자녀 2명 이상"
+                      },
+                      {
+                        "f": "specialAny",
+                        "op": "==",
+                        "v": true,
+                        "label": "우대 대상(한부모·장애인 등)"
+                      }
+                    ]
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 60000000,
+                    "label": "부부합산 소득 6천만 이하"
+                  }
+                ]
+              },
+              {
+                "f": "income",
+                "op": "<=",
+                "v": 50000000,
+                "label": "부부합산 소득 5천만 이하"
+              }
+            ]
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "deposit",
+          "caps": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "ref": "newlywedOrTwoKids"
+                  },
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": true
+                  }
+                ]
+              },
+              "v": 250000000
+            },
+            {
+              "when": {
+                "ref": "newlywedOrTwoKids"
+              },
+              "v": 160000000
+            },
+            {
+              "when": {
+                "f": "capital",
+                "op": "==",
+                "v": true
+              },
+              "v": 120000000
+            },
+            {
+              "v": 80000000
+            }
+          ],
+          "ratios": [
+            {
+              "when": {
+                "ref": "newlywedOrTwoKids"
+              },
+              "v": 0.8
+            },
+            {
+              "v": 0.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.buteomok.youth",
+      "name": "청년전용 버팀목전세자금대출",
+      "operator": "주택도시기금(심사 HUG, 취급 수탁은행)",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [
+        "youth"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020301.jsp",
+      "summary": "만 19~34세 청년 무주택 세대주를 위한 전세자금 대출입니다. 일반 버팀목보다 금리가 낮고 중소기업 재직 청년 우대가 있습니다.",
+      "targetText": "만 19~34세 세대주(예비세대주 포함), 세대원 전원 무주택. 중소·중견기업 재직·창업지원 청년은 병역 기간만큼 연장되어 최대 만 39세. 쉐어하우스는 세대주 요건 면제.",
+      "incomeText": "부부합산 5천만 원 이하(2자녀 등 6천만, 신혼 7.5천만). 순자산 3.45억 원 이하.",
+      "limitText": "1.5억(만 25세 미만 단독세대주 1.2억), 전세금의 80%. 보증금 3억 이하, 전용 85㎡ 이하(만 25세 미만 단독세대주 60㎡). 2025.6.27 이전 계약은 2억.",
+      "rate": {
+        "min": 2.2,
+        "max": 3.3
+      },
+      "termText": "2년(최장 10년). 일시상환·혼합상환. 소득 2천만 원 이하 2.2% / 2~4천 2.5% / 4~6천 2.9% / 6~7.5천 3.3%(변동).",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.employment",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "기금e든든·수탁은행. 잔금일·전입일 중 빠른 날부터 3개월 이내.",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020301.jsp",
+      "cautions": [
+        "만 34세를 넘으면 연장 시 요건을 다시 확인합니다.",
+        "중소기업 취업 청년(0.3%p, 최대 4년)과 만 25세 미만 단독세대주(0.3%p) 우대가 있으며 지방 주택은 0.2%p 인하됩니다.",
+        "중소기업취업청년 전월세보증금대출은 이 상품의 우대로 통합되었습니다.",
+        "대출금은 임대인 계좌로 입금하는 것이 원칙이며 임대인 협조가 필요합니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "ref": "rentCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "jeonse",
+            "label": "전세 계약"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 345000000,
+            "label": "순자산 3.45억 이하"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "age",
+                    "op": ">=",
+                    "v": 19,
+                    "label": "만 19세 이상"
+                  },
+                  {
+                    "f": "age",
+                    "op": "<=",
+                    "v": 34,
+                    "label": "만 34세 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "smeEmployee",
+                    "op": "==",
+                    "v": true,
+                    "label": "중소·중견기업 재직 또는 창업지원 청년"
+                  },
+                  {
+                    "f": "age",
+                    "op": ">=",
+                    "v": 19,
+                    "label": "만 19세 이상"
+                  },
+                  {
+                    "f": "age",
+                    "op": "<=",
+                    "v": 39,
+                    "label": "병역 연장 포함 만 39세 이하"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "f": "income",
+                "op": "<=",
+                "v": 50000000,
+                "label": "부부합산 소득 5천만 이하"
+              },
+              {
+                "all": [
+                  {
+                    "f": "childCount",
+                    "op": ">=",
+                    "v": 2,
+                    "label": "미성년 자녀 2명 이상"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 60000000,
+                    "label": "부부합산 소득 6천만 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "newlywed",
+                    "op": "==",
+                    "v": true,
+                    "label": "신혼"
+                  },
+                  {
+                    "f": "income",
+                    "op": "<=",
+                    "v": 75000000,
+                    "label": "부부합산 소득 7.5천만 이하"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "f": "deposit",
+            "op": "<=",
+            "v": 300000000,
+            "label": "보증금 3억 이하"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "age",
+                    "op": "<",
+                    "v": 25,
+                    "label": "만 25세 미만"
+                  },
+                  {
+                    "f": "singleHousehold",
+                    "op": "==",
+                    "v": true,
+                    "label": "단독세대주"
+                  },
+                  {
+                    "f": "area",
+                    "op": "<=",
+                    "v": 60,
+                    "label": "전용 60㎡ 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "any": [
+                      {
+                        "f": "age",
+                        "op": ">=",
+                        "v": 25,
+                        "label": "만 25세 이상"
+                      },
+                      {
+                        "f": "singleHousehold",
+                        "op": "==",
+                        "v": false,
+                        "label": "단독세대주 아님"
+                      }
+                    ]
+                  },
+                  {
+                    "f": "area",
+                    "op": "<=",
+                    "v": 85,
+                    "label": "전용 85㎡ 이하"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "deposit",
+          "caps": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "age",
+                    "op": "<",
+                    "v": 25
+                  },
+                  {
+                    "f": "singleHousehold",
+                    "op": "==",
+                    "v": true
+                  }
+                ]
+              },
+              "v": 120000000
+            },
+            {
+              "v": 150000000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.buteomok.newlywed",
+      "name": "신혼부부전용 전세자금대출",
+      "operator": "주택도시기금(심사 HUG, 취급 수탁은행)",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [
+        "newlywed"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020201.jsp",
+      "unverified": [
+        "rate"
+      ],
+      "summary": "혼인 7년 이내이거나 3개월 안에 결혼 예정인 무주택 세대주를 위한 전세자금 대출입니다.",
+      "targetText": "혼인 7년 이내 또는 3개월 내 결혼 예정인 성년 무주택 세대주.",
+      "incomeText": "부부합산 7.5천만 원 이하(초과해도 신청인 5천만 원 이하면 가능, 최초 0.3%p 가산). 순자산 3.45억 원 이하.",
+      "limitText": "수도권 2.5억·그 외 1.6억, 전세금의 80%. 보증금 수도권 4억·그 외 3억 이하, 전용 85㎡ 이하(읍·면 100㎡). 2025.6.27 이전 계약은 3억·2억.",
+      "rate": {
+        "min": 1.9,
+        "max": 3.3
+      },
+      "termText": "2년(최장 10년), 자녀당 2년 추가해 최장 20년.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.marriage",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "기금e든든·수탁은행. 잔금일·전입일 중 빠른 날부터 3개월 이내.",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020201.jsp",
+      "cautions": [
+        "결혼 예정자는 혼인신고 후 3개월 안에 배우자가 등재된 등본을 내야 하며, 내지 않으면 기한이익을 잃을 수 있습니다.",
+        "금리표 셀 값은 공식 확인이 되지 않았습니다. 지방 주택은 0.2%p 인하됩니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "ref": "rentCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "jeonse",
+            "label": "전세 계약"
+          },
+          {
+            "f": "newlywed",
+            "op": "==",
+            "v": true,
+            "label": "신혼(혼인 7년 이내 또는 3개월 내 예정)"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 345000000,
+            "label": "순자산 3.45억 이하"
+          },
+          {
+            "any": [
+              {
+                "f": "income",
+                "op": "<=",
+                "v": 75000000,
+                "label": "부부합산 소득 7.5천만 이하"
+              },
+              {
+                "f": "incomeSelf",
+                "op": "<=",
+                "v": 50000000,
+                "label": "신청인 1인 소득 5천만 이하(최초 0.3%p 가산)"
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": true,
+                    "label": "수도권"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 400000000,
+                    "label": "보증금 수도권 4억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": false,
+                    "label": "수도권 밖"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 300000000,
+                    "label": "보증금 3억 이하(수도권 밖)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ref": "areaStd"
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "deposit",
+          "caps": [
+            {
+              "when": {
+                "f": "capital",
+                "op": "==",
+                "v": true
+              },
+              "v": 250000000
+            },
+            {
+              "v": 160000000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.buteomok.newborn",
+      "name": "신생아 특례 버팀목전세자금대출",
+      "operator": "주택도시기금(심사 HUG, 취급 수탁은행)",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [
+        "newborn"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://www.myhome.go.kr/hws/portal/cont/selectBabySpecialCaseCrutchLoneView.do",
+      "summary": "대출 신청일 기준 2년 이내 출산·입양 가구를 위한 전세자금 특례 대출입니다.",
+      "targetText": "대출 신청일 기준 2년 이내 출산·입양(2023.1.1 이후 출생, 태아 제외)한 성년 무주택 세대주.",
+      "incomeText": "부부합산 1.3억 원 이하(맞벌이 2억 원 이하, 각자 1.3억 이하). 순자산 3.45억 원 이하(2026년).",
+      "limitText": "2.4억, 전세금의 80%. 보증금 수도권 5억·그 외 4억 이하, 전용 85㎡ 이하(읍·면 100㎡). 2025.6.27 이전 계약은 3억.",
+      "rate": {
+        "min": 1.3,
+        "max": 4.3
+      },
+      "termText": "2년(최장 12년). 특례금리 기간 기본 4년, 자녀당 4년 연장(최장 12년), 이후 소득별 가산.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.familyRelation",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "기금e든든·수탁은행. 잔금일·전입일 중 빠른 날부터 3개월 이내.",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://www.myhome.go.kr/hws/portal/cont/selectBabySpecialCaseCrutchLoneView.do",
+      "cautions": [
+        "금리는 소득 구간과 보증금 구간에 따라 달라지며 지방 주택은 0.2%p 인하됩니다.",
+        "대출금은 임대인 계좌로 입금하는 것이 원칙이며 임대인 협조가 필요합니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "ref": "rentCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "jeonse",
+            "label": "전세 계약"
+          },
+          {
+            "f": "newbornWithin2y",
+            "op": "==",
+            "v": true,
+            "label": "2년 이내 출산·입양(2023.1.1 이후 출생)"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 345000000,
+            "label": "순자산 3.45억 이하"
+          },
+          {
+            "ref": "newbornIncome"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": true,
+                    "label": "수도권"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 500000000,
+                    "label": "보증금 수도권 5억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": false,
+                    "label": "수도권 밖"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 400000000,
+                    "label": "보증금 4억 이하(수도권 밖)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ref": "areaStd"
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도",
+          "base": "deposit",
+          "caps": [
+            {
+              "v": 240000000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.sme.youth",
+      "name": "중소기업취업청년 전월세보증금대출(종료)",
+      "operator": "주택도시기금",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [
+        "youth"
+      ],
+      "status": "ended",
+      "redirectTo": "loan.buteomok.youth",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "secondary",
+      "sourceUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020301.jsp",
+      "unverified": [
+        "status"
+      ],
+      "summary": "별도 상품으로는 신규 접수가 끝난 것으로 알려져 있습니다(2차 자료: 2024-12-31 접수 종료). 현재는 청년전용 버팀목의 중소기업 취업(창업) 청년 우대로 안내합니다.",
+      "targetText": "중소기업에 취업했거나 창업지원을 받는 청년(이전 상품 기준).",
+      "incomeText": "현행 청년전용 버팀목 소득 기준을 확인하세요.",
+      "limitText": "이전 조건은 한도 1억·연 1.2%(2018년 자료)였습니다. 현행은 청년전용 버팀목에서 우대금리 0.3%p(최대 4년)와 연령 최대 만 39세 연장으로 흡수되었습니다.",
+      "termText": "기존 이용자는 연장이 가능하다는 2차 자료가 있으나 은행 확인이 필요합니다.",
+      "docIds": [],
+      "applyAt": "신규 접수 종료 — 청년전용 버팀목전세자금대출을 확인하세요.",
+      "officialUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020301.jsp",
+      "cautions": [
+        "공식 종료 공고와 종료일은 확인하지 못했습니다(2차 자료 기준)."
+      ],
+      "rule": {
+        "all": []
+      }
+    },
+    {
+      "id": "loan.bank.jeonse",
+      "name": "은행 전세대출(보증기관별 차이)",
+      "operator": "시중은행 + 보증기관(HF·HUG·SGI서울보증)",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://www.hf.go.kr/ko/sub02/sub02_01_02.do",
+      "unverified": [
+        "limitText",
+        "cautions"
+      ],
+      "summary": "은행 일반 전세대출은 보증기관에 따라 심사 기준이 다릅니다. HF는 차주의 소득·신용, HUG는 주택(시세·선순위), SGI는 차주 신용을 중심으로 봅니다. 아래 수치는 HF 기준이며 HUG·SGI 수치는 공식 확인이 되지 않았습니다.",
+      "targetText": "HF 전세자금보증: 무주택 또는 1주택자. 선순위 채권과 보증금의 합이 주택가격의 90% 이하여야 합니다.",
+      "incomeText": "소득 상한 없이 상환능력(DSR 등)과 보증기관 심사로 정해집니다. 1주택자가 수도권·규제지역에서 받는 전세대출은 이자분이 DSR에 반영됩니다(2025.10.29~).",
+      "limitText": "HF 기준 보증 한도 4억(1주택자는 수도권·규제지역 1.8억, 그 외 2억), 보증금의 80% 이내, 상환능력 한도. 수도권·규제지역은 산출액의 8/9. 보증금 상한 7억(수도권 외 5억). HUG는 대출보증한도 4억/3.2억, SGI는 최대 5억이 2차 자료에 있으나 확인되지 않았습니다.",
+      "termText": "보증료율(HF, 연): 보증금 1억 이하 0.06% / ~2억 0.08% / ~3억 0.10% / ~4억 0.12% / ~5억 0.14% / 5억 초과 0.20%. 보증비율은 대출의 90%(수도권·규제지역 80%). HUG·SGI 보증료율은 확인되지 않았습니다.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.incomeProof",
+        "doc.employment",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "국민·기업·농협·신한·우리·하나·지방은행·카카오·케이·토스 등 은행. 잔금일·전입일 중 빠른 날부터 3개월 이내.",
+      "officialUrl": "https://www.hf.go.kr/ko/sub02/sub02_01_02.do",
+      "cautions": [
+        "보증기관이 임대인에게 채권양도·질권 설정을 통지하므로 임대인 협조가 필요합니다.",
+        "전세대출 불가 특약, 위반건축물, 근린생활시설, 선순위 과다이면 거절될 수 있습니다.",
+        "HUG 전세금안심대출보증의 한도·보증료율, SGI 전세대출보증의 보증금 상한·한도·보증료율은 공식 수치를 확인하지 못했습니다.",
+        "HF 청년 특례전세보증의 연령 확대(만 39세) 등 2026-10-08 보도 내용은 시행일이 확인되지 않았습니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "jeonse",
+            "label": "전세 계약"
+          },
+          {
+            "f": "ownedHomes",
+            "op": "<=",
+            "v": 1,
+            "label": "무주택 또는 1주택"
+          },
+          {
+            "any": [
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": true,
+                    "label": "수도권"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 700000000,
+                    "label": "보증금 수도권 7억 이하"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "f": "capital",
+                    "op": "==",
+                    "v": false,
+                    "label": "수도권 밖"
+                  },
+                  {
+                    "f": "deposit",
+                    "op": "<=",
+                    "v": 500000000,
+                    "label": "보증금 5억 이하(수도권 밖)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "대출 한도(HF 기준 추정)",
+          "base": "deposit",
+          "caps": [
+            {
+              "when": {
+                "all": [
+                  {
+                    "f": "ownedHomes",
+                    "op": "==",
+                    "v": 1
+                  },
+                  {
+                    "ref": "metroOrRegulated"
+                  }
+                ]
+              },
+              "v": 180000000
+            },
+            {
+              "when": {
+                "f": "ownedHomes",
+                "op": "==",
+                "v": 1
+              },
+              "v": 200000000
+            },
+            {
+              "v": 400000000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.guarantee.return",
+      "name": "전세보증금반환보증(HUG·HF·SGI)",
+      "operator": "HUG · HF · SGI서울보증",
+      "kind": "info",
+      "dealTypes": [
+        "jeonse"
+      ],
+      "tags": [],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "secondary",
+      "sourceUrl": "https://housing.seoul.go.kr/site/main/content/sh01_060400",
+      "unverified": [
+        "limitText",
+        "cautions"
+      ],
+      "summary": "전세계약이 끝났을 때 보증금을 돌려받지 못할 위험에 대비해 임차인이 가입하는 보증입니다. 대출 상품이 아니라 계약 전에 확인할 항목이므로 자격 판정 없이 안내만 합니다.",
+      "targetText": "HUG: 아파트·연립·다세대·단독·다가구·주거용 오피스텔 등(근린생활시설·공관 제외). HF 전세지킴보증: HF 전세자금보증 이용자, 집합건물만. SGI: 아파트·기타 주택.",
+      "incomeText": "소득 요건은 없고, 저소득(5천만 원 이하)·신혼(6천만 원 이하) 등은 보증료 할인이 있습니다.",
+      "limitText": "HUG: 보증금 수도권 7억·그 외 5억 이하. 한도는 주택가격×90% − 선순위채권이며 선순위는 주택가액의 60%(다가구 80%) 이하여야 합니다. 주택가격 산정(공시가격 126% 등)은 2차 자료로 확인되지 않았습니다.",
+      "termText": "신청 시기: 잔금일·전입일 중 늦은 날부터 계약기간의 1/2이 지나기 전(갱신도 1/2 전). 보증료율(연)은 HUG 아파트 0.097~0.164%·기타 0.111~0.211%이며 HF·SGI 요율은 확인되지 않았습니다.",
+      "docIds": [
+        "doc.leaseContract",
+        "doc.registry",
+        "doc.idCard"
+      ],
+      "applyAt": "HUG(전세보증금반환보증), HF 전세지킴보증(은행 창구), SGI(앱·지점).",
+      "officialUrl": "https://hf.go.kr/ko/sub02/sub02_03_03.do",
+      "cautions": [
+        "계약기간의 절반이 지나면 가입할 수 없습니다.",
+        "선순위 근저당이 많거나 위반건축물이거나 임대인에게 보증사고 이력이 있으면 거절될 수 있고, 보증금이 시세의 90%를 넘으면 가입이 어렵습니다. 계약 전에 한도 조회를 먼저 하세요.",
+        "지자체의 청년·신혼 보증료 지원(최대 30~40만 원)이 따로 있습니다."
+      ],
+      "rule": {
+        "all": []
+      }
+    },
+    {
+      "id": "loan.wolse.youth",
+      "name": "청년전용 보증부월세대출",
+      "operator": "주택도시기금",
+      "dealTypes": [
+        "wolse"
+      ],
+      "tags": [
+        "youth"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://housing.seoul.go.kr/site/main/content/sh01_070400",
+      "unverified": [
+        "targetText",
+        "termText"
+      ],
+      "summary": "만 19~34세 청년 단독 세대주의 보증금과 월세를 함께 지원하는 기금 대출입니다. 공식 상품 페이지를 열람하지 못해 서울주거포털 요약 기준입니다.",
+      "targetText": "만 19~34세 무주택 단독 세대주(예비 포함). 대상 주택은 전용 60㎡ 이하, 보증금 6,500만 원 이하, 월세 70만 원 이하(2차 자료, 확인되지 않음).",
+      "incomeText": "부부합산 소득 5천만 원 이하, 순자산 3.45억 원 이하.",
+      "limitText": "보증금 최대 4,500만 원, 월세 최대 1,200만 원(24개월 기준 월 50만 원 이내). 금리: 보증금 연 1.3%, 월세는 월 20만 원까지 0%·초과분 연 1.0%.",
+      "termText": "2년(최장 10년은 2차 자료). 일시상환. 월세는 매월 임대인 계좌로 지급됩니다.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "기금e든든·수탁은행. 잔금일·전입일 중 빠른 날부터 3개월 이내(2차 자료).",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://housing.seoul.go.kr/site/main/content/sh01_070400",
+      "cautions": [
+        "임대인 동의(채권양도 통지)가 필수입니다.",
+        "월세를 연체하면 지급이 중단되고 기한이익을 잃을 수 있습니다.",
+        "대상 주택 조건(보증금 6,500만·월세 70만·60㎡)은 공식 확인이 되지 않아 판정에서 항상 확인 필요로 표시합니다."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "ref": "rentCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "wolse",
+            "label": "월세 계약"
+          },
+          {
+            "f": "age",
+            "op": ">=",
+            "v": 19,
+            "label": "만 19세 이상"
+          },
+          {
+            "f": "age",
+            "op": "<=",
+            "v": 34,
+            "label": "만 34세 이하"
+          },
+          {
+            "f": "singleHousehold",
+            "op": "==",
+            "v": true,
+            "label": "단독 세대주"
+          },
+          {
+            "f": "income",
+            "op": "<=",
+            "v": 50000000,
+            "label": "소득 5천만 이하"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 345000000,
+            "label": "순자산 3.45억 이하"
+          },
+          {
+            "f": "deposit",
+            "op": "<=",
+            "v": 65000000,
+            "label": "보증금 6,500만 이하",
+            "unverified": true
+          },
+          {
+            "f": "monthlyRent",
+            "op": "<=",
+            "v": 700000,
+            "label": "월세 70만 이하",
+            "unverified": true
+          },
+          {
+            "f": "area",
+            "op": "<=",
+            "v": 60,
+            "label": "전용 60㎡ 이하",
+            "unverified": true
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "보증금 대출 한도",
+          "base": "deposit",
+          "caps": [
+            {
+              "v": 45000000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 1
+            }
+          ]
+        },
+        {
+          "label": "월세 대출 한도(24개월)",
+          "base": "monthlyRent24",
+          "caps": [
+            {
+              "v": 12000000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.wolse.stable",
+      "name": "주거안정월세대출",
+      "operator": "주택도시기금",
+      "dealTypes": [
+        "wolse"
+      ],
+      "tags": [
+        "lowIncome"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020401.jsp",
+      "summary": "월세를 매월 임대인 계좌로 지급해 주는 기금 대출입니다. 우대형(취업준비생·수급자 등)과 일반형이 있습니다.",
+      "targetText": "보증금 5% 이상을 낸 성년 무주택 세대주. 우대형은 취업준비생·희망키움통장·근로장려금·사회초년생(취업 5년 내·만 35세 이하·4천만 원 이하)·자녀장려금·주거급여 수급자, 일반형은 부부합산 소득 5천만 원 이하.",
+      "incomeText": "일반형 부부합산 5천만 원 이하, 우대형은 해당 사유가 있으면 소득과 별도로 판단합니다. 순자산 3.45억 원 이하(2026년).",
+      "limitText": "월 60만 원, 총 1,440만 원(24회). 주거급여 수급액만큼 차감. 보증금 1억 원 이하·월세 60만 원 이하, 전용 85㎡ 이하(읍·면 100㎡).",
+      "rate": {
+        "min": 1.3,
+        "max": 1.8
+      },
+      "termText": "2년(최장 10년). 일시상환. 우대형 연 1.3% / 일반형 연 1.8%.",
+      "docIds": [
+        "doc.idCard",
+        "doc.residentFull",
+        "doc.healthInsurance",
+        "doc.incomeProof",
+        "doc.leaseContract",
+        "doc.registry"
+      ],
+      "applyAt": "수탁은행(우리·신한·국민·농협·하나). 임대차 만기 전 아무 때나. 담보는 HF 월세자금보증(별도 신청).",
+      "applyUrl": "https://enhuf.molit.go.kr",
+      "officialUrl": "https://nhuf.molit.go.kr/FP/FP05/FP0502/FP05020401.jsp",
+      "cautions": [
+        "생애 1회만 이용할 수 있습니다.",
+        "학자금대출을 이용 중이면 불가합니다(졸업증명 제출 시 예외).",
+        "주거급여 수급자는 농협·기업은행에서 신청할 수 없고, 연체분은 소급해 지급되지 않습니다.",
+        "우대형 사유(취업준비생 등)는 앱이 묻지 않으므로 소득이 5천만 원을 넘어도 우대형에 해당할 수 있는지 기금e든든에서 확인하세요."
+      ],
+      "rule": {
+        "all": [
+          {
+            "ref": "fundCommon"
+          },
+          {
+            "ref": "rentCommon"
+          },
+          {
+            "f": "dealType",
+            "op": "==",
+            "v": "wolse",
+            "label": "월세 계약"
+          },
+          {
+            "f": "usedMonthlyLoanBefore",
+            "op": "==",
+            "v": false,
+            "label": "주거안정월세대출을 이용한 적이 없음"
+          },
+          {
+            "f": "studentLoan",
+            "op": "==",
+            "v": false,
+            "label": "학자금대출을 이용 중이 아님"
+          },
+          {
+            "f": "netAsset",
+            "op": "<=",
+            "v": 345000000,
+            "label": "순자산 3.45억 이하"
+          },
+          {
+            "f": "deposit",
+            "op": "<=",
+            "v": 100000000,
+            "label": "보증금 1억 이하"
+          },
+          {
+            "f": "monthlyRent",
+            "op": "<=",
+            "v": 600000,
+            "label": "월세 60만 이하"
+          },
+          {
+            "ref": "areaStd"
+          },
+          {
+            "f": "income",
+            "op": "<=",
+            "v": 50000000,
+            "label": "소득 5천만 이하(우대형 사유가 있으면 별도 판단)"
+          }
+        ]
+      },
+      "limits": [
+        {
+          "label": "월세 대출 한도(24개월)",
+          "base": "monthlyRent24",
+          "caps": [
+            {
+              "v": 14400000
+            }
+          ],
+          "ratios": [
+            {
+              "v": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loan.wolse.subsidy",
+      "name": "청년월세 지원(국토교통부)",
+      "operator": "국토교통부(접수·심사는 지자체, 복지로)",
+      "kind": "info",
+      "dealTypes": [
+        "wolse"
+      ],
+      "tags": [
+        "youth",
+        "lowIncome"
+      ],
+      "status": "active",
+      "verifiedAt": "2026-10-29",
+      "sourceGrade": "official",
+      "sourceUrl": "https://www.korea.kr/news/policyNewsView.do?newsId=148961039",
+      "unverified": [
+        "applyAt"
+      ],
+      "summary": "대출이 아니라 월세를 현금으로 지원하는 보조금입니다. 2026년부터 계속사업으로 바뀌어 매년 신규 대상자를 모집합니다. 대출 판정과 별도로 안내만 합니다.",
+      "targetText": "만 19~34세, 부모와 별도 거주, 무주택. 청년가구 중위소득 60% 이하·재산 1억 2,200만 원 이하, 원가구 중위소득 100% 이하·재산 4억 7,000만 원 이하.",
+      "incomeText": "청년가구 중위소득 60% 이하, 원가구 중위소득 100% 이하.",
+      "limitText": "월 최대 20만 원 × 최장 24개월(총 480만 원), 생애 1회. 보증금·관리비는 제외.",
+      "termText": "2026년 신규 접수는 3.30~5.29였고 선정 발표는 9.14였습니다. 연중 상시 접수는 아닙니다.",
+      "docIds": [],
+      "applyAt": "복지로 온라인 또는 행정복지센터. 2027년 접수 시기는 아직 확인되지 않았습니다(보통 3월 전후 예상).",
+      "applyUrl": "https://www.bokjiro.go.kr",
+      "officialUrl": "https://www.myhome.go.kr/hws/portal/dgn/selectSelfDiagnosisYouthHousView.do",
+      "cautions": [
+        "지자체의 자체 월세 지원이나 다른 월세 지원을 받는 중이면 중복해서 받을 수 없습니다.",
+        "주택 소유자, 2촌 이내 친족 주택 임차, 공공임대 거주자는 제외됩니다.",
+        "2027년 소득 기준 확대 전망은 언론 보도이며 확정 여부가 확인되지 않았습니다."
+      ],
+      "rule": {
+        "all": []
+      }
+    }
+  ],
+  "fragments": {
+    "fundCommon": {
+      "all": [
+        {
+          "f": "homeless",
+          "op": "==",
+          "v": true,
+          "label": "세대원 전원 무주택"
+        },
+        {
+          "f": "householdHead",
+          "op": "==",
+          "v": true,
+          "label": "세대주(또는 1개월 내 세대주 예정)"
+        },
+        {
+          "f": "creditIssue",
+          "op": "==",
+          "v": false,
+          "label": "연체·신용회복 등록 등 신용 문제 없음"
+        },
+        {
+          "f": "hasFundLoan",
+          "op": "==",
+          "v": false,
+          "label": "기금·은행 전세·주택담보 대출을 이용 중이 아님"
+        }
+      ]
+    },
+    "rentCommon": {
+      "all": [
+        {
+          "f": "publicRental",
+          "op": "==",
+          "v": false,
+          "label": "공공임대주택에 입주 중이 아님"
+        }
+      ]
+    },
+    "metroOrRegulated": {
+      "any": [
+        {
+          "f": "capital",
+          "op": "==",
+          "v": true,
+          "label": "수도권(서울·경기·인천)"
+        },
+        {
+          "f": "regulatedArea",
+          "op": "==",
+          "v": true,
+          "label": "규제지역"
+        }
+      ]
+    },
+    "nonMetro": {
+      "all": [
+        {
+          "f": "capital",
+          "op": "==",
+          "v": false,
+          "label": "수도권 밖"
+        },
+        {
+          "f": "regulatedArea",
+          "op": "==",
+          "v": false,
+          "label": "규제지역 아님"
+        }
+      ]
+    },
+    "newlywedOrTwoKids": {
+      "any": [
+        {
+          "f": "newlywed",
+          "op": "==",
+          "v": true,
+          "label": "신혼(혼인 7년 이내 또는 3개월 내 예정)"
+        },
+        {
+          "f": "childCount",
+          "op": ">=",
+          "v": 2,
+          "label": "미성년 자녀 2명 이상"
+        }
+      ]
+    },
+    "newbornIncome": {
+      "any": [
+        {
+          "f": "income",
+          "op": "<=",
+          "v": 130000000,
+          "label": "부부합산 소득 1.3억 이하"
+        },
+        {
+          "all": [
+            {
+              "f": "dualIncome",
+              "op": "==",
+              "v": true,
+              "label": "맞벌이"
+            },
+            {
+              "f": "income",
+              "op": "<=",
+              "v": 200000000,
+              "label": "맞벌이 합산 소득 2억 이하"
+            },
+            {
+              "f": "incomeMax",
+              "op": "<=",
+              "v": 130000000,
+              "label": "맞벌이 각자 소득 1.3억 이하"
+            }
+          ]
+        }
+      ]
+    },
+    "notUnder30Single": {
+      "not": {
+        "all": [
+          {
+            "f": "age",
+            "op": "<",
+            "v": 30,
+            "label": "만 30세 미만"
+          },
+          {
+            "f": "singleHousehold",
+            "op": "==",
+            "v": true,
+            "label": "단독(1인) 세대주"
+          },
+          {
+            "f": "dependentException",
+            "op": "!=",
+            "v": true,
+            "label": "미성년 형제자매 부양 등 예외에 해당하지 않음"
+          }
+        ]
+      }
+    },
+    "areaStd": {
+      "f": "area",
+      "op": "<=",
+      "v": {
+        "var": "areaCap"
+      },
+      "label": "전용면적 기준 이하(85㎡, 수도권 밖 읍·면 100㎡)"
+    }
+  },
+  "questions": [
+    {
+      "key": "dealType",
+      "label": "어떤 거래를 알아보고 있나요?",
+      "kind": "select",
+      "tier": 1,
+      "order": 10,
+      "options": [
+        {
+          "value": "buy",
+          "label": "매매"
+        },
+        {
+          "value": "jeonse",
+          "label": "전세"
+        },
+        {
+          "value": "wolse",
+          "label": "월세"
+        }
+      ],
+      "help": "프로필에서 정한 거래 유형으로 자동 채워집니다."
+    },
+    {
+      "key": "age",
+      "label": "만 나이는 몇 살인가요?",
+      "kind": "number",
+      "tier": 1,
+      "order": 20,
+      "unit": "세",
+      "help": "청년 상품은 만 나이로 따집니다."
+    },
+    {
+      "key": "married",
+      "label": "혼인 상태를 알려 주세요.",
+      "kind": "select",
+      "tier": 1,
+      "order": 30,
+      "options": [
+        {
+          "value": "single",
+          "label": "미혼"
+        },
+        {
+          "value": "married",
+          "label": "기혼"
+        },
+        {
+          "value": "planned",
+          "label": "3개월 안에 결혼 예정"
+        }
+      ]
+    },
+    {
+      "key": "marriageYears",
+      "label": "혼인한 지 몇 년째인가요?",
+      "kind": "number",
+      "tier": 1,
+      "order": 31,
+      "unit": "년",
+      "showIf": {
+        "f": "married",
+        "op": "==",
+        "v": "married"
+      },
+      "help": "혼인신고일 기준으로, 7년 이내면 신혼 조건에 해당할 수 있습니다."
+    },
+    {
+      "key": "incomeSelf",
+      "label": "본인 연소득(세전)은 얼마인가요?",
+      "kind": "won",
+      "tier": 1,
+      "order": 40,
+      "unit": "원",
+      "help": "세전 연 소득입니다. 정확한 값은 소득금액증명원으로 확인하세요."
+    },
+    {
+      "key": "incomeSpouse",
+      "label": "배우자 연소득(세전)은 얼마인가요?",
+      "kind": "won",
+      "tier": 1,
+      "order": 41,
+      "unit": "원",
+      "showIf": {
+        "f": "married",
+        "op": "!=",
+        "v": "single"
+      },
+      "help": "소득이 없으면 0으로 입력하세요."
+    },
+    {
+      "key": "homeless",
+      "label": "세대원 전원이 무주택인가요?",
+      "kind": "bool",
+      "tier": 1,
+      "order": 50,
+      "help": "세대원 중 한 명이라도 주택을 가지고 있으면 아니요입니다."
+    },
+    {
+      "key": "householdHead",
+      "label": "세대주인가요(또는 1개월 안에 세대주가 될 예정인가요)?",
+      "kind": "bool",
+      "tier": 1,
+      "order": 60
+    },
+    {
+      "key": "region",
+      "label": "어느 지역의 주택인가요?",
+      "kind": "select",
+      "tier": 1,
+      "order": 70,
+      "options": [
+        {
+          "value": "11",
+          "label": "서울"
+        },
+        {
+          "value": "26",
+          "label": "부산"
+        },
+        {
+          "value": "27",
+          "label": "대구"
+        },
+        {
+          "value": "28",
+          "label": "인천"
+        },
+        {
+          "value": "29",
+          "label": "광주"
+        },
+        {
+          "value": "30",
+          "label": "대전"
+        },
+        {
+          "value": "31",
+          "label": "울산"
+        },
+        {
+          "value": "36",
+          "label": "세종"
+        },
+        {
+          "value": "41",
+          "label": "경기"
+        },
+        {
+          "value": "51",
+          "label": "강원"
+        },
+        {
+          "value": "43",
+          "label": "충북"
+        },
+        {
+          "value": "44",
+          "label": "충남"
+        },
+        {
+          "value": "52",
+          "label": "전북"
+        },
+        {
+          "value": "46",
+          "label": "전남"
+        },
+        {
+          "value": "47",
+          "label": "경북"
+        },
+        {
+          "value": "48",
+          "label": "경남"
+        },
+        {
+          "value": "50",
+          "label": "제주"
+        }
+      ]
+    },
+    {
+      "key": "sigungu",
+      "label": "경기도 어느 시·군·구인가요?",
+      "kind": "select",
+      "tier": 1,
+      "order": 71,
+      "showIf": {
+        "f": "region",
+        "op": "==",
+        "v": "41"
+      },
+      "options": [
+        {
+          "value": "과천시",
+          "label": "과천시"
+        },
+        {
+          "value": "광명시",
+          "label": "광명시"
+        },
+        {
+          "value": "수원시 영통구",
+          "label": "수원시 영통구"
+        },
+        {
+          "value": "수원시 장안구",
+          "label": "수원시 장안구"
+        },
+        {
+          "value": "수원시 팔달구",
+          "label": "수원시 팔달구"
+        },
+        {
+          "value": "성남시 분당구",
+          "label": "성남시 분당구"
+        },
+        {
+          "value": "성남시 수정구",
+          "label": "성남시 수정구"
+        },
+        {
+          "value": "성남시 중원구",
+          "label": "성남시 중원구"
+        },
+        {
+          "value": "안양시 동안구",
+          "label": "안양시 동안구"
+        },
+        {
+          "value": "용인시 수지구",
+          "label": "용인시 수지구"
+        },
+        {
+          "value": "의왕시",
+          "label": "의왕시"
+        },
+        {
+          "value": "하남시",
+          "label": "하남시"
+        },
+        {
+          "value": "other",
+          "label": "위에 없는 시·군"
+        }
+      ],
+      "help": "규제지역 여부를 가리는 데 쓰입니다."
+    },
+    {
+      "key": "isEupMyeon",
+      "label": "수도권 밖 읍·면 지역인가요?",
+      "kind": "bool",
+      "tier": 1,
+      "order": 72,
+      "showIf": {
+        "f": "capital",
+        "op": "==",
+        "v": false
+      },
+      "help": "읍·면이면 전용면적 기준이 100㎡까지 넓어집니다."
+    },
+    {
+      "key": "housePrice",
+      "label": "매매가(주택 평가액)는 얼마인가요?",
+      "kind": "won",
+      "tier": 1,
+      "order": 80,
+      "unit": "원",
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "buy"
+      }
+    },
+    {
+      "key": "deposit",
+      "label": "임차보증금은 얼마인가요?",
+      "kind": "won",
+      "tier": 1,
+      "order": 81,
+      "unit": "원",
+      "showIf": {
+        "f": "dealType",
+        "op": "in",
+        "v": [
+          "jeonse",
+          "wolse"
+        ]
+      }
+    },
+    {
+      "key": "monthlyRent",
+      "label": "월세는 얼마인가요?",
+      "kind": "won",
+      "tier": 1,
+      "order": 82,
+      "unit": "원",
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "wolse"
+      }
+    },
+    {
+      "key": "area",
+      "label": "전용면적은 몇 ㎡인가요?",
+      "kind": "number",
+      "tier": 1,
+      "order": 90,
+      "unit": "㎡",
+      "help": "공급면적이 아니라 전용면적입니다."
+    },
+    {
+      "key": "netAsset",
+      "label": "부부합산 순자산은 얼마인가요?",
+      "kind": "won",
+      "tier": 2,
+      "order": 100,
+      "unit": "원",
+      "help": "자산에서 부채를 뺀 값입니다. 기금 대출은 2026년 기준 구입 5.11억, 전·월세 3.45억 이하를 봅니다."
+    },
+    {
+      "key": "ownedHomes",
+      "label": "본인과 배우자가 가진 주택은 몇 채인가요?",
+      "kind": "select",
+      "tier": 2,
+      "order": 110,
+      "options": [
+        {
+          "value": "0",
+          "label": "없음"
+        },
+        {
+          "value": "1",
+          "label": "1채"
+        },
+        {
+          "value": "2",
+          "label": "2채 이상"
+        }
+      ]
+    },
+    {
+      "key": "firstHome",
+      "label": "생애최초 주택 구입인가요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 120,
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "buy"
+      },
+      "help": "본인과 배우자 모두 주택을 소유한 이력이 없어야 합니다."
+    },
+    {
+      "key": "creditIssue",
+      "label": "연체·대위변제·신용회복 등록 같은 신용 문제가 있나요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 130
+    },
+    {
+      "key": "existingLoans",
+      "label": "지금 이용 중인 대출이 있나요?",
+      "kind": "multi",
+      "tier": 2,
+      "order": 140,
+      "options": [
+        {
+          "value": "fund",
+          "label": "주택도시기금 대출"
+        },
+        {
+          "value": "jeonse",
+          "label": "은행 전세대출"
+        },
+        {
+          "value": "mortgage",
+          "label": "주택담보대출"
+        },
+        {
+          "value": "student",
+          "label": "학자금대출"
+        }
+      ],
+      "help": "없으면 아무것도 고르지 않고 넘어가세요."
+    },
+    {
+      "key": "childCount",
+      "label": "미성년 자녀는 몇 명인가요?",
+      "kind": "number",
+      "tier": 2,
+      "order": 150,
+      "unit": "명"
+    },
+    {
+      "key": "newbornWithin2y",
+      "label": "2년 안에 출산하거나 입양했나요(2023.1.1 이후 출생)?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 160
+    },
+    {
+      "key": "dualIncome",
+      "label": "부부가 모두 소득이 있는 맞벌이인가요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 170,
+      "showIf": {
+        "f": "married",
+        "op": "!=",
+        "v": "single"
+      }
+    },
+    {
+      "key": "singleHousehold",
+      "label": "혼자 사는 단독(1인) 세대주인가요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 180
+    },
+    {
+      "key": "houseType",
+      "label": "주택 유형은 무엇인가요?",
+      "kind": "select",
+      "tier": 2,
+      "order": 190,
+      "options": [
+        {
+          "value": "apt",
+          "label": "아파트"
+        },
+        {
+          "value": "rowhouse",
+          "label": "연립·다세대"
+        },
+        {
+          "value": "detached",
+          "label": "단독·다가구"
+        },
+        {
+          "value": "officetel",
+          "label": "오피스텔"
+        },
+        {
+          "value": "share",
+          "label": "쉐어하우스"
+        },
+        {
+          "value": "neighborhood",
+          "label": "근린생활시설"
+        }
+      ]
+    },
+    {
+      "key": "specialGroup",
+      "label": "해당하는 우대 대상이 있나요?",
+      "kind": "multi",
+      "tier": 2,
+      "order": 200,
+      "options": [
+        {
+          "value": "single_parent",
+          "label": "한부모"
+        },
+        {
+          "value": "disabled",
+          "label": "장애인"
+        },
+        {
+          "value": "multicultural",
+          "label": "다문화"
+        },
+        {
+          "value": "low_income",
+          "label": "수급자·차상위"
+        },
+        {
+          "value": "elder_support",
+          "label": "노부모 부양"
+        }
+      ],
+      "help": "없으면 아무것도 고르지 않고 넘어가세요."
+    },
+    {
+      "key": "smeEmployee",
+      "label": "중소·중견기업에 재직 중이거나 창업지원을 받는 청년인가요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 210
+    },
+    {
+      "key": "dreamAccountWinner",
+      "label": "청년 주택드림 청약통장으로 청약에 당첨됐나요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 220,
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "buy"
+      }
+    },
+    {
+      "key": "subscriptionAccount",
+      "label": "청약통장 가입 기간은 얼마나 됐나요?",
+      "kind": "number",
+      "tier": 2,
+      "order": 230,
+      "unit": "개월",
+      "help": "우대금리 구간을 가리는 데 쓰입니다."
+    },
+    {
+      "key": "creditScore",
+      "label": "신용점수(CB)는 몇 점인가요?",
+      "kind": "number",
+      "tier": 2,
+      "order": 240,
+      "unit": "점",
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "buy"
+      },
+      "help": "보금자리론은 271점 이상을 봅니다. 모르면 모르겠어요를 고르세요."
+    },
+    {
+      "key": "dependentException",
+      "label": "미성년 형제자매를 6개월 이상 부양하는 등 예외 사유가 있나요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 250,
+      "showIf": {
+        "all": [
+          {
+            "f": "age",
+            "op": "<",
+            "v": 30
+          },
+          {
+            "f": "singleHousehold",
+            "op": "==",
+            "v": true
+          }
+        ]
+      },
+      "help": "만 30세 미만 단독 세대주는 디딤돌에서 원칙적으로 제외되지만 예외가 있습니다."
+    },
+    {
+      "key": "fraudVictim",
+      "label": "전세사기피해자로 인정받았나요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 260,
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "buy"
+      }
+    },
+    {
+      "key": "publicRental",
+      "label": "지금 공공임대주택에 살고 있나요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 270,
+      "showIf": {
+        "f": "dealType",
+        "op": "in",
+        "v": [
+          "jeonse",
+          "wolse"
+        ]
+      }
+    },
+    {
+      "key": "usedMonthlyLoanBefore",
+      "label": "주거안정월세대출을 이용한 적이 있나요?",
+      "kind": "bool",
+      "tier": 2,
+      "order": 280,
+      "showIf": {
+        "f": "dealType",
+        "op": "==",
+        "v": "wolse"
+      }
+    },
+    {
+      "key": "contractStage",
+      "label": "지금 계약 단계는 어디인가요?",
+      "kind": "select",
+      "tier": 2,
+      "order": 290,
+      "options": [
+        {
+          "value": "before",
+          "label": "계약 전"
+        },
+        {
+          "value": "contracted",
+          "label": "계약 후(잔금 전)"
+        },
+        {
+          "value": "paid",
+          "label": "잔금·전입 완료"
+        }
+      ],
+      "help": "신청 기한(잔금·전입 후 3개월)과 반환보증 가입 시기를 가리는 데 쓰입니다."
+    }
+  ]
 }

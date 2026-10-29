@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "packVersion": "2026.10.29-1",
+  "packVersion": "2026.10.29-2",
   "baseDate": "2026-10-29",
   "minApp": 1,
   "files": {
@@ -14,15 +14,15 @@
     },
     "loans": {
       "path": "loans.json",
-      "sha256": "44b9e2a4196b220d70c4e95098ce86fa83279ed8bb18abb07691824a3b6b627a"
+      "sha256": "719bed5a4836d3ee38b7492d63d6341888d9b1f09ef761def8a39197502b5acf"
     },
     "regions": {
       "path": "regions.json",
-      "sha256": "78b8fb195a2bb7d20e39914faffda7a51afcc55a4a3d47d5966561e6f3bb2d54"
+      "sha256": "6c8694b83215cc66706d5ceff30cd9466eaeea2a7c76b50021681d8a50e78c15"
     },
     "calc": {
       "path": "calc.json",
-      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      "sha256": "625b681c9c94cce425dd73c901c381ec07c449847b577448513c3dc492672e9a"
     },
     "glossary": {
       "path": "glossary.json",
